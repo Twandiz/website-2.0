@@ -10,12 +10,14 @@ import { map, shareReplay } from 'rxjs/operators';
 })
 export class NavBarComponent {
 
-  isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
-    .pipe(
-      map(result => result.matches),
-      shareReplay()
-    );
+  logoImage: any;
+  logoAlt: any;
 
-  constructor(private breakpointObserver: BreakpointObserver) {}
+  constructor() {
+
+    this.logoImage='\assets\images\Logo.png';
+    this.logoAlt='\assets\images\LogoAlt.jpg';
+  }
 
 }
+
